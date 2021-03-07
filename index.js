@@ -14,9 +14,16 @@ http
 				response.writeHead(200,{
 				"Content-Type":"text/html",
 				});
-				response.write("<h2>Home Page!</h2>");
+				response.write("<h2>About Page!</h2>");
 				response.end();
 				break;
-			}
-   	 })
-    	.listen(8080);
+	default:
+		response.writeHead(404,{
+			"Content-Type":"text/html",
+    	});
+	response.write("<h1>404</h1>");
+	response.end();
+	break;
+}
+})
+    .listen(8080);
